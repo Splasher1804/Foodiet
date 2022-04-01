@@ -1,0 +1,10 @@
+cerinte laborator : 
+- Repository de git ( commit, push) - 0,1
+- UML ( database model) - 0,5
+- Parallel programing ( async for UI) - 0,5
+- Logging( log exceptions, log info messages e.g user logged in etc.) - 0,5
+- Unit testing ( 20 test units) - 1 pct
+- ORM - 1,4 pcte
+- SOLID ( report 2 principle implementations) - 2 pct
+- Design patterns( 2 creational patterns, 1 structural, 1 behavioural) - UML, example of one use for each - 4 pct
+- Optional - Interop ( can replace any of above if makes any sense - design patterns)
