@@ -4,10 +4,10 @@ using System.Text;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 
-namespace Foodiet.Data_Acces_Layer
+namespace Foodiet.DAL
 {
     public class FoodContext : DbContext
-    { 
+    {
         public FoodContext() : base("FoodContext")
         {
         }
