@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data.SqlClient;
 using System.Data;
+using Foodiet.Models;
 
 namespace Foodiet
 {
@@ -22,8 +23,11 @@ namespace Foodiet
     /// </summary>
     public partial class SignupWindow : Window
     {
+
+        private FoodContext _context;
         public SignupWindow()
         {
+            _context = new FoodContext();
             InitializeComponent();
         }
         SqlConnection conn = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Foodiet.Models.FoodContext;Integrated Security=True");
@@ -37,48 +41,55 @@ namespace Foodiet
         private void button_create_account_Click(object sender, RoutedEventArgs e)
         {
             try
-            { 
-                String query2 = "SELECT * FROM Login WHERE username = '" + tb_signup_username.Text + "'";
-                SqlDataAdapter adapter2 = new SqlDataAdapter(query2, conn);
+            {
+                var login_add = new Login { Username = tb_signup_username.Text, Password = tb_signup_password.Text };            
+                var Users = _context.Logins;
+                var login = Users.Where(l => l.Username == tb_signup_username.Text && l.Password == tb_signup_password.Text).FirstOrDefault();
+                
+                //String query2 = "SELECT * FROM Login WHERE username = '" + tb_signup_username.Text + "'";
+                //SqlDataAdapter adapter2 = new SqlDataAdapter(query2, conn);
 
-                DataTable dataTable2 = new DataTable();
-                adapter2.Fill(dataTable2);
+                //DataTable dataTable2 = new DataTable();
+                //adapter2.Fill(dataTable2);
 
 
-                if (dataTable2.Rows.Count > 0)
+                //if (dataTable2.Rows.Count > 0)
+                if (login != null)
                 {
-
+                    
                     signup_info.Content = "Account already exists";
                 }
                 else
                 {
-                    String query = "INSERT INTO Login (username,password) VALUES('" + tb_signup_username.Text + "', '" + tb_signup_password.Text + "')";
-                    SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
-
-                    DataTable dataTable = new DataTable();
-                    adapter.Fill(dataTable);
-
+                    //String query = "INSERT INTO Login (username,password) VALUES('" + tb_signup_username.Text + "', '" + tb_signup_password.Text + "')";
+                    //SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                    //
+                    //DataTable dataTable = new DataTable();
+                    //adapter.Fill(dataTable);
+                    _context.Logins.Add(login_add);
+                    _context.SaveChanges();
                     signup_info.Content = "Account has been succesfully created";
-                    //Task.Delay(2000).ContinueWith(_ =>
+                    LoginWindow loginwindow = new LoginWindow();
+                    loginwindow.Show();
+                    this.Close();
+                    //Task.Delay(200).ContinueWith(_ =>
                     //{
-                        
+                    //   
                     //}
                     //);
-                    LoginWindow login = new LoginWindow();
-                    login.Show();
-                    this.Close();
+
 
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-            finally
-            {
-                conn.Close();
-            }
+                 }
+                 catch (Exception ex)
+                 {
+                     MessageBox.Show(ex.ToString());
+                 }
+                 finally
+                 {
+                     conn.Close();
+                 }
 
-        }
+            }
     }
 }
