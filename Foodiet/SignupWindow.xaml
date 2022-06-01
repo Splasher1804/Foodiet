@@ -1,0 +1,16 @@
+﻿<Window x:Class="Foodiet.SignupWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Foodiet"
+        mc:Ignorable="d"
+        Title="SignupWindow" Height="364" Width="439">
+    <Grid>
+        <Label x:Name="label_welcome" Content="Sign up" HorizontalAlignment="Center" Height="34" Margin="0,56,0,0" VerticalAlignment="Top" Width="114" FontSize="20" FontWeight="Bold" FontFamily="Arial Black"/>
+        <TextBox x:Name="tb_signup_username" HorizontalAlignment="Center" Height="34" Margin="0,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="179" TextAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="tb_signup_password" HorizontalAlignment="Center" Height="34" Margin="0,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="179" TextAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button x:Name="button_back" Content="Back" HorizontalAlignment="Center" Height="36" Margin="130,240,0,0" VerticalAlignment="Top" Width="49" Click="button_back_Click"/>
+        <Button x:Name="button_create_account" Content="Create account" HorizontalAlignment="Center" Height="36" Margin="-60,240,0,0" VerticalAlignment="Top" Width="114" Click="button_create_account_Click"/>
+    </Grid>
+</Window>
