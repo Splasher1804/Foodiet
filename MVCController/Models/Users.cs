@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-public class Users
+namespace MVCController.Models
+
 {
-	public Users()
+	public class Users
 	{
 		public int ID { get; set; } //cheie primara
 		public string Ussrname { get; set; }

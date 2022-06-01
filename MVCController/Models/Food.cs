@@ -1,8 +1,9 @@
 ﻿using System;
 
-public class Food
+namespace MVCController.Models
+
 {
-	public Food()
+	public class Food
 	{
 		public int FoodID { get; set; }
 		public string Description { get; set; }
