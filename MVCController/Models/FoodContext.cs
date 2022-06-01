@@ -1,5 +1,10 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System.Data.Entity;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Data.Entity.Infrastructure;
+
 
 
 namespace MVCController.Models
@@ -11,10 +16,10 @@ namespace MVCController.Models
         }
         public FoodContext(DbContextOptions<FoodContext> options)   : base(options) { }
 
-        public DbSet<Account>   Account { get; set; }
-        public DbSet<Users>     Users { get; set; }
-        public DbSet<Meal>      Meal { get; set; }
-        public DbSet<Food>      Food { get; set; }
+        public System.Data.Entity.DbSet<Account> Account { get; set; }
+        public System.Data.Entity.DbSet<Users> Users { get; set; }
+        public System.Data.Entity.DbSet<Meal> Meal { get; set; }
+        public System.Data.Entity.DbSet<Food> Food { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

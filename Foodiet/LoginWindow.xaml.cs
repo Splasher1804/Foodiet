@@ -27,7 +27,7 @@ namespace Foodiet
             InitializeComponent();
         }
 
-        SqlConnection conn = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Foodiet;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Foodiet.Models.FoodContext;Integrated Security=True");
 
         private void button_login_Click(object sender, RoutedEventArgs e)
         {
@@ -38,7 +38,7 @@ namespace Foodiet
 
             try
             {
-                String query = "SELECT * FROM login WHERE username = '" + tb_username.Text + "' AND password = '" + tb_password.Text+"'";
+                String query = "SELECT * FROM Login WHERE username = '" + tb_username.Text + "' AND password = '" + tb_password.Text+"'";
                 SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
 
                 DataTable dataTable = new DataTable();
