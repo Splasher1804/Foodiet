@@ -1,0 +1,18 @@
+﻿<Page x:Class="Foodiet.Pages.Landing"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Foodiet.Pages"
+      xmlns:nav="clr-namespace:Foodiet"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Landing">
+
+    <Grid ButtonBase.Click="Grid_click" Background="White">
+        <Label x:Name="label_user" Content="Welcome User" HorizontalAlignment="Left" Height="93" Margin="27,20,0,0" VerticalAlignment="Top" Width="446" FontSize="48"/>
+        <Button x:Name="button_signout" Content="Sign Out" HorizontalAlignment="Left" Height="48" Margin="600,42,0,0" VerticalAlignment="Top" Width="170"/>
+        <nav:NavButton Text="My Meals" Height="275" Margin="67,118,405,54" NavUri="/Pages/UserMeals.xaml" imageSource="/Images/Menu_meal_img.jpg"/>
+        <nav:NavButton Text="Statistics" Height="275" Margin="400,118,72,54" NavUri="/Pages/UserMeals.xaml" imageSource="/Images/Menu_stats_img.jpg"/>
+    </Grid>
+</Page>

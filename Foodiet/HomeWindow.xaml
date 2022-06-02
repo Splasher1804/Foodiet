@@ -7,7 +7,6 @@
         mc:Ignorable="d"
         Title="HomeWindow" Height="450" Width="800">
     <Grid>
-        <Button x:Name="button_signout" Content="Sign out" HorizontalAlignment="Right" Height="29" VerticalAlignment="Top" Width="107" Click="button_signout_Click" Margin="0,10,10,0"/>
-
+        <Frame Source="/Pages/Landing.xaml" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

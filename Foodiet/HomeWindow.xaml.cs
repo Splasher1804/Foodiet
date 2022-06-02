@@ -8,6 +8,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Foodiet
@@ -22,11 +23,6 @@ namespace Foodiet
             InitializeComponent();
         }
 
-        private void button_signout_Click(object sender, RoutedEventArgs e)
-        {
-            LoginWindow login = new LoginWindow();
-            login.Show();
-            this.Close();
-        }
+
     }
 }

@@ -6,6 +6,12 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup> 
  
+  <ItemGroup>
+    <None Remove="Images\Menu_meal_img.jpg" />
+    <None Remove="Images\Menu_stats_img.jpg" />
+    <None Remove="Menu_meal_img.jpg" />
+  </ItemGroup> 
+ 
   <ItemGroup> 
     <PackageReference Include="EntityFramework" Version="6.4.4" /> 
     <PackageReference Include="log4net" Version="2.0.14" /> 
@@ -19,6 +25,16 @@
   <ItemGroup>
     <Folder Include="Configuration\" />
     <Folder Include="Controllers\" />
+  </ItemGroup> 
+ 
+  <ItemGroup>
+    <Resource Include="Images\Menu_meal_img.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Menu_stats_img.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Menu_meal_img.jpg" />
   </ItemGroup> 
  
 </Project> 
