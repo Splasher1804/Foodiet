@@ -25,7 +25,6 @@ namespace Foodiet
     {
         SqlConnection conn = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Foodiet.Models.FoodContext;Integrated Security=True");
         private FoodContext _context;
-
         public AddMeal()
         {
             InitializeComponent();
@@ -33,12 +32,13 @@ namespace Foodiet
             _context = new FoodContext();
             var foods = _context.Foods.Select(o => new
             { Name = o.Description, Calories = o.Calories , foodID = o.FoodID}).ToList(); ;
+
             DataGrid Content = (DataGrid)this.FindName("dataGrid");
             Content.ItemsSource = foods;
             DataGridCheckBoxColumn Column3 = new DataGridCheckBoxColumn();
             Column3.Header = "Selected";
             Column3.Binding = new Binding("Selected");
-            dataGrid.Columns.Add(Column3);
+            Content.Columns.Add(Column3);
         }
 
         private void button_save_Click(object sender, RoutedEventArgs e)
@@ -50,9 +50,10 @@ namespace Foodiet
             { 
             List<Food> foodList = new List<Food>();
 
-            for (int i = 0; i < Content.Items.Count; i++)
+            for (int i = 0; i < Content.Items.Count-1; i++)
             {
                 DataGridRow row = (DataGridRow)Content.ItemContainerGenerator.ContainerFromIndex(i);
+                //if(Content.Columns[0].GetCellContent(row)!=null)
                 CheckBox cellContent = Content.Columns[0].GetCellContent(row) as CheckBox;
                 TextBlock cellContent2 = Content.Columns[3].GetCellContent(row) as TextBlock;
                 
