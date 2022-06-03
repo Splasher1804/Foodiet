@@ -5,6 +5,10 @@
     <TargetFramework>netcoreapp3.1</TargetFramework> 
     <UseWPF>true</UseWPF>
 	 <GenerateProgramFile>false</GenerateProgramFile>
+
+	  <configSections>
+		  <section name="log4net" type="log4net.Config.Log4NetConfigurationSectionHandler,log4net" />
+	  </configSections>
   </PropertyGroup> 
  
   <ItemGroup>
@@ -27,6 +31,7 @@
     <Folder Include="Configuration\" />
     <Folder Include="Controllers\" />
   </ItemGroup> 
+
  
   <ItemGroup>
     <Resource Include="Images\Menu_meal_img.jpg">
