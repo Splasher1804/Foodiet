@@ -22,7 +22,11 @@ namespace Foodiet
         {
             InitializeComponent();
         }
+        
+        public void closeWindow()
+        {  
 
+        }
 
     }
 }

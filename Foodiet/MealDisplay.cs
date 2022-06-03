@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -14,12 +15,24 @@ using System.Windows.Shapes;
 namespace Foodiet
 {
 
-    public class MealDisplay : Control
+    public class MealDisplay : ButtonBase
     {
         static MealDisplay()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(MealDisplay), new FrameworkPropertyMetadata(typeof(MealDisplay)));
         }
+
+
+
+        public int mealID
+        {
+            get { return (int)GetValue(mealIDProperty); }
+            set { SetValue(mealIDProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for mealID.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty mealIDProperty =
+            DependencyProperty.Register("mealID", typeof(int), typeof(MealDisplay), new PropertyMetadata(0));
 
 
 
@@ -66,7 +79,6 @@ namespace Foodiet
             DependencyProperty.Register("totalCalories", typeof(String), typeof(MealDisplay), new PropertyMetadata(null));
 
 
-
         public ListBox listOfFoodItems
         {
             get { return (ListBox)GetValue(listOfFoodItemsProperty); }
@@ -76,6 +88,17 @@ namespace Foodiet
         // Using a DependencyProperty as the backing store for listOfFoodItems.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty listOfFoodItemsProperty =
         DependencyProperty.Register("listOfFoodItems", typeof(ListBox), typeof(MealDisplay), new PropertyMetadata(null));
+
+
+        public String strokeThickness
+        {
+            get { return (String)GetValue(strokeThicknessProperty); }
+            set { SetValue(strokeThicknessProperty, value); }
+        }
+        // Using a DependencyProperty as the backing store for strokeThickness.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty strokeThicknessProperty =
+            DependencyProperty.Register("strokeThickness", typeof(String), typeof(MealDisplay), new PropertyMetadata("0"));
+
 
 
     }

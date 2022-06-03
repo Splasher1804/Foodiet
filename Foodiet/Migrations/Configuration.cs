@@ -34,8 +34,8 @@
             );
 
             context.Meals.AddOrUpdate(x => x.MealID,
-            new Meal() { Description = "breakfast", Foods = new Collection<Food> { f1, f2 } },
-            new Meal() { Description = "lunch", Foods = new Collection<Food> { f2 } }
+            new Meal() { Name="Breakfast", Description = "made for low calories", Foods = new Collection<Food> { f1, f2 } },
+            new Meal() { Name="Lunch", Description = "Am hungry", Foods = new Collection<Food> { f2 } }
             );
         }
     }

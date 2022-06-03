@@ -1,0 +1,21 @@
+﻿<Window x:Class="Foodiet.AddMeal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Foodiet"
+        mc:Ignorable="d"
+        Title="AddMeal" Height="350" Width="400">
+    <Grid>
+        <Button x:Name="button_back" Content="Back" HorizontalAlignment="Left" Height="26" Margin="294,288,0,0" VerticalAlignment="Top" Width="87" Click="button_back_Click"/>
+        <Button x:Name="button_save" Content="Save meal" HorizontalAlignment="Left" Height="26" Margin="173,288,0,0" VerticalAlignment="Top" Width="87" Click="button_save_Click"/>
+        <TextBox x:Name="tb_name" TextWrapping="Wrap" Text="" Margin="157,44,19,265"/>
+        <Label x:Name="label_name" Content="Name of meal" HorizontalAlignment="Left" Height="25" Margin="36,44,0,0" VerticalAlignment="Top" Width="95"/>
+        <TextBox x:Name="tb_description" TextWrapping="Wrap" Text="" Margin="157,74,19,235"/>
+        <Label x:Name="label_description" Content="Description" HorizontalAlignment="Left" Height="25" Margin="36,74,0,0" VerticalAlignment="Top" Width="95"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="139" Margin="157,122,0,0" VerticalAlignment="Top" Width="224" d:ItemsSource="{d:SampleData ItemCount=5}"></DataGrid>
+        
+        <Label x:Name="label_items" Content="Select food items" HorizontalAlignment="Left" Height="25" Margin="36,179,0,0" VerticalAlignment="Top" Width="105"/>
+
+    </Grid>
+</Window>

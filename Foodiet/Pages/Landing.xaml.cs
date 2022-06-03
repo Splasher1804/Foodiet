@@ -26,21 +26,24 @@ namespace Foodiet.Pages
         private void Grid_click(object sender, RoutedEventArgs e)
         {
             NavButton ClickedButton = e.OriginalSource as NavButton;
-            if (ClickedButton.Name!="button_signout")
+            System.Diagnostics.Debug.WriteLine(e.OriginalSource.ToString());
+            if (ClickedButton!=null)
+            { 
             NavigationService.Navigate(ClickedButton.NavUri);
-
+            }
         }
 
         private void button_signout_Click(object sender, RoutedEventArgs e)
         {
             LoginWindow login = new LoginWindow();
             login.Show();
-
+            NavigationService.Navigate(null);
             var parentWindow = this.Parent as Window;
             if (parentWindow != null)
             {
                 parentWindow.Close();
             }
         }
+
     }
 }

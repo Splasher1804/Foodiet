@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity;
+
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -13,12 +14,21 @@ namespace Foodiet.Models
         public DbSet<Meal> Meals { get; set; }
         public DbSet<Login> Logins { get; set; }
 
-        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Entity<Meal>().HasMany(x => x.Foods).WithMany();
-        //}
-
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Food>()
+                    .HasMany<Meal>(s => s.Meals)
+                    .WithMany(c => c.Foods)
+                    .Map(cs =>
+                    {
+                        cs.MapLeftKey("FoodID");
+                        cs.MapRightKey("MealID");
+                        cs.ToTable("FoodMeal");
+                    });
+        }
     }
+
+ 
 
     [Table("Food")]
     public class Food
@@ -34,6 +44,7 @@ namespace Foodiet.Models
         public float Proteins { get; set; }
 
         public float Fats { get; set; }
+        public virtual ICollection<Meal> Meals { get; set; }
 
 
     }
@@ -44,6 +55,7 @@ namespace Foodiet.Models
        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
        [Key]
        public int MealID { get; set; }
+       public string Name { get; set; }
        public string Description { get; set; }
        public virtual ICollection<Food> Foods { get; set; }
     }
