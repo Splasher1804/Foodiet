@@ -6,16 +6,16 @@
       xmlns:local="clr-namespace:Foodiet.Pages"
       xmlns:nav="clr-namespace:Foodiet"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="UserMeals">
+      d:DesignHeight="470"
+      Title="UserMeals" Width="800">
 
     <Grid   Background="White">
         <Label x:Name="Title" Content="My Meals" HorizontalAlignment="Left" Height="79" Margin="10,10,0,0" VerticalAlignment="Top" Width="390" FontSize="48"/>
-        <Button x:Name="button_back" Command="NavigationCommands.BrowseBack" Height="48" Content="Back" Margin="605,24,31,376"/>
+        <Button x:Name="button_back" Command="NavigationCommands.BrowseBack" Height="48" Content="Back" Margin="0,25,31,0" HorizontalAlignment="Right" VerticalAlignment="Top" Width="164"/>
 
-        <Button x:Name="button_add_meal" Content="Add a meal" HorizontalAlignment="Left" Height="44" Margin="605,112,0,0" VerticalAlignment="Top" Width="164" Click="button_add_meal_Click"/>
-        <Button x:Name="button_remove_meal" Content="Remove selected meal" HorizontalAlignment="Left" Height="44" Margin="605,234,0,0" VerticalAlignment="Top" Width="164" Click="button_remove_meal_Click"/>
-        <Button x:Name="button_modify_meal" Content="Modify selected meal" HorizontalAlignment="Left" Height="44" Margin="605,356,0,0" VerticalAlignment="Top" Width="164"/>
+        <Button x:Name="button_add_meal" Content="Add a meal" HorizontalAlignment="Right" Height="44" Margin="605,200,31,0" VerticalAlignment="Top" Width="164" Click="button_add_meal_Click"/>
+        <Button x:Name="button_remove_meal" Content="Remove selected meal" HorizontalAlignment="Right" Height="44" Margin="605,277,31,0" VerticalAlignment="Top" Width="164" Click="button_remove_meal_Click"/>
+        <Button x:Name="button_modify_meal" Content="Modify selected meal" HorizontalAlignment="Right" Height="44" Margin="605,356,31,0" VerticalAlignment="Top" Width="164"/>
 
         <!--<ScrollViewer  VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Margin="49,103,254,50">-->
         <Grid ButtonBase.Click="Grid2_click"  x:Name="content_meals" Margin="46,112,270,50">

@@ -37,12 +37,9 @@ namespace Foodiet.Pages
         {
             LoginWindow login = new LoginWindow();
             login.Show();
-            NavigationService.Navigate(null);
-            var parentWindow = this.Parent as Window;
-            if (parentWindow != null)
-            {
-                parentWindow.Close();
-            }
+            var wnd = Window.GetWindow(this);
+            //Window parentWindow = Application.Current.MainWindow;
+            wnd.Close();
         }
 
     }

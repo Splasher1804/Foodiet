@@ -42,9 +42,9 @@ namespace Foodiet
         {
             try
             {
-                var login_add = new Login { Username = tb_signup_username.Text, Password = tb_signup_password.Text };            
+                var login_add = new Login { Username = tb_signup_username.Text, Password = tb_signup_password.Password.ToString() };            
                 var Users = _context.Logins;
-                var login = Users.Where(l => l.Username == tb_signup_username.Text && l.Password == tb_signup_password.Text).FirstOrDefault();
+                var login = Users.Where(l => l.Username == tb_signup_username.Text && l.Password == tb_signup_password.Password.ToString()).FirstOrDefault();
                 
                 //String query2 = "SELECT * FROM Login WHERE username = '" + tb_signup_username.Text + "'";
                 //SqlDataAdapter adapter2 = new SqlDataAdapter(query2, conn);

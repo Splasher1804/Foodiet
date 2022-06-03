@@ -54,7 +54,7 @@ namespace Foodiet
                 if (Users.Count() > 0)
                 {
                     username = tb_username.Text;
-                    password = tb_password.Text;
+                    password = tb_password.Password.ToString();
 
                     HomeWindow home = new HomeWindow();
                     home.Show();

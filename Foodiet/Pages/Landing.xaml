@@ -9,7 +9,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Landing">
 
-    <Grid ButtonBase.Click="Grid_click" Background="White">
+    <Grid ButtonBase.Click="Grid_click" Background="White" Margin="0,0,0,-37">
         <Label x:Name="label_user" Content="Welcome User" HorizontalAlignment="Left" Height="93" Margin="27,20,0,0" VerticalAlignment="Top" Width="446" FontSize="48"/>
         <nav:NavButton Text="My Meals" Height="275" Margin="67,118,405,54" NavUri="/Pages/UserMeals.xaml" imageSource="/Images/Menu_meal_img.jpg"/>
         <nav:NavButton Text="Statistics" Height="275" Margin="400,118,72,54" NavUri="/Pages/UserMeals.xaml" imageSource="/Images/Menu_stats_img.jpg">

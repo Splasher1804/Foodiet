@@ -9,7 +9,7 @@
     <Grid>
         <Label x:Name="label_welcome" Content="Welcome" HorizontalAlignment="Center" Height="34" Margin="0,56,0,0" VerticalAlignment="Top" Width="114" FontSize="20" FontWeight="Bold" FontFamily="Arial Black"/>
         <TextBox x:Name="tb_username" HorizontalAlignment="Center" VerticalContentAlignment="Center" Height="34" Margin="0,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="179" TextAlignment="Center"/>
-        <TextBox x:Name="tb_password" HorizontalAlignment="Center" VerticalContentAlignment="Center" Height="34" Margin="0,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="179" TextAlignment="Center"/>
+        <PasswordBox x:Name="tb_password" HorizontalAlignment="Center" Height="34" Margin="0,174,0,0"  VerticalAlignment="Top" Width="179" VerticalContentAlignment="Center" TextBlock.TextAlignment="Center" />
         <Button x:Name="button_signup" Content="Sign up" HorizontalAlignment="Center" Height="36" Margin="130,240,0,0" VerticalAlignment="Top" Width="49" Click="button_signup_Click"/>
         <Button x:Name="button_login" Content="Login" HorizontalAlignment="Center" Height="36" Margin="-60,240,0,0" VerticalAlignment="Top" Width="114" Click="button_login_Click"/>
     </Grid>

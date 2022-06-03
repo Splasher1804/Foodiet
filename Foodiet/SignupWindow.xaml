@@ -9,9 +9,9 @@
     <Grid>
         <Label x:Name="label_welcome" Content="Sign up" HorizontalAlignment="Center" Height="34" Margin="0,56,0,0" VerticalAlignment="Top" Width="114" FontSize="20" FontWeight="Bold" FontFamily="Arial Black"/>
         <TextBox x:Name="tb_signup_username" HorizontalAlignment="Center" Height="34" Margin="0,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="179" TextAlignment="Center" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="tb_signup_password" HorizontalAlignment="Center" Height="34" Margin="0,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="179" TextAlignment="Center" VerticalContentAlignment="Center"/>
         <Button x:Name="button_back" Content="Back" HorizontalAlignment="Center" Height="36" Margin="130,240,0,0" VerticalAlignment="Top" Width="49" Click="button_back_Click"/>
         <Button x:Name="button_create_account" Content="Create account" HorizontalAlignment="Center" Height="36" Margin="-60,240,0,0" VerticalAlignment="Top" Width="114" Click="button_create_account_Click"/>
         <Label x:Name="signup_info" Content="" HorizontalAlignment="Center" Height="24" Margin="0,90,0,0" VerticalAlignment="Top" Width="179" HorizontalContentAlignment="Center" FontSize="11"/>
+        <PasswordBox x:Name="tb_signup_password" TextBlock.TextAlignment="Center"  HorizontalAlignment="Center" Height="34" Margin="0,174,0,0"  VerticalAlignment="Top" Width="179" VerticalContentAlignment="Center"/>
     </Grid>
 </Window>

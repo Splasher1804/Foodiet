@@ -55,6 +55,11 @@ namespace Foodiet.Pages
         {
             AddMeal addMeal = new AddMeal();
             addMeal.Show();
+            addMeal.Closed += addMealClosed;
+        }
+        void addMealClosed(object sender, EventArgs e)
+        {
+            display_data();
         }
 
         private void display_data()
